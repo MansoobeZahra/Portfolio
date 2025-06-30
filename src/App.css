@@ -1,0 +1,151 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #253853;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD700; /* sun yellow */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC300;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Base */
+.glass {
+  background: rgba(23, 10, 97, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(4, 17, 12, 0.096);
+}
+
+/* Neon Glow Effect */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(17, 81, 153, 0.4); /* royal blue glow */
+}
+
+.neon-glow-pink {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); /* soft yellow glow */
+}
+
+/* Typing Animation */
+.typing-animation::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Floating Animation */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Pulse Animation */
+.pulse-slow {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Gradient Text */
+.gradient-text {
+   background: linear-gradient(45deg, #ecee76, #3170b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Skill Progress Animation */
+.skill-progress {
+  background: linear-gradient(90deg, #cfbb4b, #428de2);
+  animation: progress-fill 2s ease-out;
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: var(--progress); }
+}
+
+/* 3D Card Flip */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  background-color: #10151F;
+  color: #bb4848;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Mobile Floating */
+@media (max-width: 768px) {
+  .floating {
+    animation: floating-mobile 2s ease-in-out infinite;
+  }
+
+  @keyframes floating-mobile {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+/* Spinner */
+.spinner {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hover Glow Effect */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(38, 87, 143, 0.5);
+  transform: translateY(-5px);
+}
